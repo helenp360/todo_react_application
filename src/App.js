@@ -15,8 +15,6 @@ function App() {
       <TaskInput/>
       <TaskItemHeading/>
       <TaskItem text="Task One"/>
-      <TaskItem text="Task Two"/>
-      <TaskItem text="Task Three"/>
 
 
     </div>

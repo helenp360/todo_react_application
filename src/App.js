@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TaskItem from "./TaskItem/TaskItem"
+import TaskInput from "./TaskInput/TaskInput"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        This is my header
       </header>
+
+      <TaskInput text="Enter a task"/>
+      <TaskItem text="Task One"/>
+      <TaskItem text="Task Two"/>
+      <TaskItem text="Task Three"/>
+
+
     </div>
   );
 }
 
 export default App;
+
+
+//need to add bootstrap - check Heather's video
+//

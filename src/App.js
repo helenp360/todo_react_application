@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        This is my header
+        To Do List
       </header>
 
       <TaskInput text="Enter a task"/>
@@ -23,5 +23,3 @@ function App() {
 export default App;
 
 
-//need to add bootstrap - check Heather's video
-//

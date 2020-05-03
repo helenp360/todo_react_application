@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import TaskItem from "./TaskItem/TaskItem"
 import TaskInput from "./TaskInput/TaskInput"
+import TaskItemHeading from "./TaskItemHeading/TaskItemHeading"
+
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
         To Do List
       </header>
 
-      <TaskInput text="Enter a task"/>
+      <TaskInput/>
+      <TaskItemHeading/>
       <TaskItem text="Task One"/>
       <TaskItem text="Task Two"/>
       <TaskItem text="Task Three"/>

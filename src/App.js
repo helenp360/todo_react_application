@@ -13,7 +13,9 @@ function App() {
       </header>
 
       <TaskInput/>
+      <br></br>
       <TaskItemHeading/>
+      <br></br>
       <TaskItem text="Task One"/>
 
 

@@ -24,20 +24,26 @@ function App() {
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingUrgent/>
-            <TaskItem/>
-            <TaskItem/>
+            <ul>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+            </ul>
           </div>  
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingImportant/>
-            <TaskItem/>
-            <TaskItem/>
+            <ul>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+            </ul>
           </div>
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingNonurgent/>
-            <TaskItem/>
-            <TaskItem/>
+            <ul>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+            </ul>
           </div>     
 
         </div>
@@ -51,5 +57,3 @@ export default App;
 
 
 //TaskItemActive and TaskItemInactive ?
-
-

@@ -1,3 +1,9 @@
 .task-item__text {
     color: darkblue;
 }
+
+
+.task-item__buttons {
+    height: 30px;
+}
+

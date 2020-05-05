@@ -24,26 +24,26 @@ function App() {
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingUrgent/>
-            <ul>
+          
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-            </ul>
+          
           </div>  
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingImportant/>
-            <ul>
+
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-            </ul>
+            
           </div>
 
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingNonurgent/>
-            <ul>
+          
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-            </ul>
+          
           </div>     
 
         </div>

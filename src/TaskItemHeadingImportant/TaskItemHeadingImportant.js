@@ -1,10 +1,10 @@
 import React from 'react';
 import './TaskItemHeadingImportant.css';
 
-function TaskItemHeadingImportant() {
+function TaskItemHeadingImportant(props) {
   return (
     <div className="task-list-heading-urgent">
-        <p>You have <strong>X important </strong>things to do!</p>
+        <p>You have <strong>{ props.text } important </strong>things to do!</p>
     </div>
   );
 }

@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        To Do List
+        <h1>To Do List</h1>
       </header>
 
       <TaskInput/>
@@ -23,26 +23,28 @@ function App() {
         <div className="row">
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingUrgent/>
+            <TaskItemHeadingUrgent text="4"/>
           
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task One"/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Two"/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Three"/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Four"/></li>
           
           </div>  
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingImportant/>
+            <TaskItemHeadingImportant text="3"/>
 
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Three"/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Four"/></li>
             
           </div>
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingNonurgent/>
+            <TaskItemHeadingNonurgent text="6"/>
           
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Five"/></li>
+              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Six"/></li>
           
           </div>     
 

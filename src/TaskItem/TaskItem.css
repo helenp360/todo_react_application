@@ -1,5 +1,5 @@
-.task-item__text {
-    color: darkblue;
+.task-item {
+    /* background-color: #e5d8e9; */
 }
 
 
@@ -7,3 +7,6 @@
     height: 30px;
 }
 
+.list-group-item {
+    background-color: aliceblue;
+}

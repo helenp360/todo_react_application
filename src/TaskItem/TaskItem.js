@@ -8,7 +8,7 @@ function TaskItem(props) {
       <div className="container">
         <div className="row">
           <div className="col task-item__text">
-            <p>Walk dog</p>
+            <p>{ props.text }</p>
           </div>
           <div class="col task-item__buttons btn-group btn-group-sm" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary">Done</button>

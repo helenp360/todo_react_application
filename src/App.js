@@ -49,7 +49,7 @@ function App() {
           <div className="col-12 col-sm-4 task-list">
             <TaskItemHeadingNonurgent text="1"/>
           
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Eleven"/></li>
+              <li className="list-group-item"><TaskItem text="Task Eleven"/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Twelve"/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Thirteen"/></li>
               <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Fourteen"/></li>

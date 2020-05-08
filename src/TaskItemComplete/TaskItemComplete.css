@@ -1,3 +1,8 @@
 .task-item-complete__buttons {
     height: 30px;
 }
+
+.task-item-complete__text {
+    color: #999999;
+}
+

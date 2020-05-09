@@ -11,8 +11,8 @@ function TaskItemComplete(props) {
             <p><del>{ props.text }</del></p>
           </div>
           <div class="col task-item-complete__buttons btn-group btn-group-sm" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Edit</button>
-            <button type="button" class="btn btn-secondary">Delete</button>
+            <button type="button" className="btn btn-secondary">Edit</button>
+            <button type="button" className="btn btn-secondary">Delete</button>
           </div>
         </div>
       </div>

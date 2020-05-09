@@ -16,8 +16,8 @@ function TaskInput() {
               <option value="3">Non-urgent</option>
             </select>
           </div>
-          <div class="input-group-append">
-            <button class="btn btn-secondary" type="button" id="button-addon2">Add</button>
+          <div className="input-group-append">
+            <button className="btn btn-secondary" type="button" id="button-addon2">Add</button>
           </div>
         </div>
       </div>

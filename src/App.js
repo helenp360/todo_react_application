@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './App.css';
 import TaskItem from "./TaskItem/TaskItem"
 import TaskItemComplete from "./TaskItemComplete/TaskItemComplete"
@@ -8,10 +8,32 @@ import TaskItemHeadingUrgent from "./TaskItemHeadingUrgent/TaskItemHeadingUrgent
 import TaskItemHeadingImportant from "./TaskItemHeadingImportant/TaskItemHeadingImportant"
 import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeadingNonurgent"
 
-
+//Things to do!
+//get it to put tasks in different columns depending on different levels of urgency
+//show completed tasks but hide deleted tasks
+//do CSS for completed tasks - cross out and turn grey AND lose the done button
 
 
 function App() {
+
+  // const tasks = useState()[0];
+  // const setTasks = useState()[1];
+
+  const [ tasks ] = useState([
+    {text: "Walk the dog", completed: false, urgency: "1", id: "001"},
+    {text: "Mop the kitchen", completed: false, urgency: "1", id: "002"},
+    {text: "Empty the dishwasher", completed: false, urgency: "1", id: "003"},
+    {text: "Ring Mum", completed: false, urgency: "2", id: "004"},
+    {text: "Wash the car", completed: false, urgency: "3", id: "005"}
+  ]);
+
+  // const activeTasks = tasks.filter(task => !task.completed);
+
+  const urgentTasks = tasks.filter(task => task.urgency==="1");
+  const importantTasks = tasks.filter(task => task.urgency==="2");
+  const nonurgentTasks = tasks.filter(task => task.urgency==="3");
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,35 +47,25 @@ function App() {
         <div className="row">
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingUrgent text="4"/>
+            <TaskItemHeadingUrgent text={ urgentTasks.length }/>
           
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task One"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Two"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Three"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Four"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Five"/></li>
+            {urgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
           
           </div>  
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingImportant text="3"/>
+            <TaskItemHeadingImportant text={ importantTasks.length }/>
 
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Six"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Seven"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItem text="Task Eight"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Nine"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Ten"/></li>
+            {importantTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
+
             
           </div>
 
           <div className="col-12 col-sm-4 task-list">
-            <TaskItemHeadingNonurgent text="1"/>
+            <TaskItemHeadingNonurgent text={ nonurgentTasks.length }/>
           
-              <li className="list-group-item"><TaskItem text="Task Eleven"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Twelve"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Thirteen"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Fourteen"/></li>
-              <li className="list-group-item d-flex justify-content-between align-items-center"><TaskItemComplete text="Task Fifteen"/></li>
+            {nonurgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
+
 
           
           </div>     

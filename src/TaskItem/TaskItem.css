@@ -1,6 +1,8 @@
-.task-item {
-    /* background-color: #e5d8e9; */
-}
+
+.task-item-complete .task-item__text {
+    color: gray;
+    text-decoration: line-through;
+} 
 
 
 .task-item__buttons {

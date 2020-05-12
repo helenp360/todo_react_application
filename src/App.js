@@ -12,7 +12,8 @@ import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeading
 //DONE get it to put tasks in different columns depending on different levels of urgency
 //DONE show completed tasks but hide deleted tasks
 //DONE do CSS for completed tasks - cross out and turn grey AND lose the done button
-//If nothing in active tasks then well done message
+//If active tasks length = 0 and completed tasks is >=1 then well done message -- ternery operator?
+//If only 1 item in list it needs to say "thing to do"
 //CSS layout and colours
 //tidy up and get rid of code I don't need
 
@@ -21,29 +22,31 @@ function App() {
 
   const [ tasks ] = useState([
     {text: "Walk the dog", completed: true, deleted: false, urgency: "1", id: "001"},
-    {text: "Mop the kitchen", completed: false, deleted: false, urgency: "1", id: "002"},
-    {text: "Empty the dishwasher", completed: false, deleted: false, urgency: "1", id: "003"},
+    {text: "Mop the kitchen", completed: false, deleted: false, urgency: "2", id: "002"},
+    {text: "Empty the dishwasher", completed: true, deleted: false, urgency: "2", id: "003"},
     {text: "Ring Mum", completed: false, deleted: false, urgency: "2", id: "004"},
     {text: "Wash the car", completed: false, deleted: false, urgency: "3", id: "005"},
-    {text: "Fold the washing", completed: true, deleted: false, urgency: "3", id: "005"},
+    {text: "Ironing", completed: true, deleted: false, urgency: "3", id: "005"},
+    {text: "Mow the lawn", completed: false, deleted: false, urgency: "3", id: "005"},
+    {text: "Email work", completed: true, deleted: false, urgency: "1", id: "005"},
+    {text: "Return parcel", completed: false, deleted: false, urgency: "3", id: "005"},
+    {text: "Finish homework", completed: false, deleted: false, urgency: "1", id: "005"},
 
   ]);
 
   // const activeTasks = tasks.filter(task => !task.completed);
 
   // const urgentTasks = tasks.filter(task => task.deleted===false && task.urgency==="1");
-  const urgentTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="1" && task.completed===true);
   const urgentTasksActive = tasks.filter(task => task.deleted===false && task.urgency==="1" && task.completed===false);
+  const urgentTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="1" && task.completed===true);
 
   // const importantTasks = tasks.filter(task => task.deleted===false && task.urgency==="2");
-  const importantTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="2" && task.completed===true);
   const importantTasksActive = tasks.filter(task => task.deleted===false && task.urgency==="2" && task.completed===false);
-
+  const importantTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="2" && task.completed===true);
 
   // const nonurgentTasks = tasks.filter(task => task.deleted===false && task.urgency==="3");
-  const nonurgentTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="3" && task.completed===true);
   const nonurgentTasksActive = tasks.filter(task => task.deleted===false && task.urgency==="3" && task.completed===false);
-
+  const nonurgentTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="3" && task.completed===true);
 
 
 

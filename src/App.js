@@ -12,10 +12,12 @@ import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeading
 //DONE get it to put tasks in different columns depending on different levels of urgency
 //DONE show completed tasks but hide deleted tasks
 //DONE do CSS for completed tasks - cross out and turn grey AND lose the done button
+//Match up sizing and layout of task buttons
+//Spacing between task items - need a table/border?
 //If active tasks length = 0 and completed tasks is >=1 then well done message -- ternery operator?
 //If only 1 item in list it needs to say "thing to do"
 //CSS layout and colours
-//tidy up and get rid of code I don't need
+//tidy up and get rid of code (and files) I don't need
 
 
 function App() {
@@ -62,7 +64,7 @@ function App() {
       <div className="container">
         <div className="row">
 
-          <div className="col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-4 task-list">
             <TaskItemHeadingUrgent text={ urgentTasksActive.length }/>
           
             {/* {urgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)} */}
@@ -73,7 +75,7 @@ function App() {
 
           </div>  
 
-          <div className="col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-4 task-list">
             <TaskItemHeadingImportant text={ importantTasksActive.length }/>
 
             {importantTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
@@ -83,7 +85,7 @@ function App() {
             
           </div>
 
-          <div className="col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-4 task-list">
             <TaskItemHeadingNonurgent text={ nonurgentTasksActive.length }/>
           
             {nonurgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}

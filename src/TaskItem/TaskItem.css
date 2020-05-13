@@ -6,17 +6,19 @@
 
 .task-item__text {
     /* margin: 20px, 20px, 20px, 20px; */
-    text-align: left;
+    /* text-align: left; */
 }
 
 .task-item__buttons {
     height: 40px;
+    align-self: center;
     /* background-color: red; */
 }
 
-/* .list-group-item {
+.list-group-item {
     background-color: #e9deed;
-} */
+    border-width: 1px;
+}
 
 /* .task-item__text {
     margin: 0px;

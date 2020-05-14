@@ -12,8 +12,8 @@ import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeading
 //DONE get it to put tasks in different columns depending on different levels of urgency
 //DONE show completed tasks but hide deleted tasks
 //DONE do CSS for completed tasks - cross out and turn grey AND lose the done button
-//Match up sizing and layout of task buttons
-//Spacing between task items - need a table/border?
+//Line up buttons?
+//DONE Spacing between task items - need a table/border?
 //If active tasks length = 0 and completed tasks is >=1 then well done message -- ternery operator?
 //If only 1 item in list it needs to say "thing to do"
 //CSS layout and colours
@@ -69,8 +69,7 @@ function App() {
           
             {/* {urgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)} */}
             {urgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            <br></br>
-            {urgentTasksCompleted.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
+            {urgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
 
 
           </div>  
@@ -79,8 +78,7 @@ function App() {
             <TaskItemHeadingImportant text={ importantTasksActive.length }/>
 
             {importantTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            <br></br>
-            {importantTasksCompleted.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
+            {importantTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
 
             
           </div>
@@ -89,8 +87,7 @@ function App() {
             <TaskItemHeadingNonurgent text={ nonurgentTasksActive.length }/>
           
             {nonurgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            <br></br>
-            {nonurgentTasksCompleted.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
+            {nonurgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
 
 
           

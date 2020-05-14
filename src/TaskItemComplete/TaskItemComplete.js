@@ -7,8 +7,8 @@ function TaskItemComplete(props) {
     <div className="task-item-complete">
       <div className="container">
         <div className="row">
-          <div className="col task-item-complete__text">
-            <p><del>{ props.text }</del></p>
+          <div className="col-7">
+            <span className="list-group-item task-item-complete__text"><del>{ props.text }</del></span>
           </div>
           <div class="col task-item-complete__buttons btn-group btn-group-sm" role="group" aria-label="Basic example">
             <button type="button" className="btn btn-secondary">Edit</button>

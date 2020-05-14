@@ -11,8 +11,6 @@
 
 .task-item__buttons {
     height: 40px;
-    align-self: center;
-    /* background-color: red; */
 }
 
 .list-group-item {
@@ -27,3 +25,4 @@
 .list-group-item {
     padding: 0px;
 } */
+

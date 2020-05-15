@@ -1,14 +1,8 @@
 .task-item-complete__buttons {
     height: 40px;
-    left: 20px;
-    color: red;
 }
 
-.task-item-complete__text {
-    color: #999999;
-}
-
-.task-item-complete .task-item__text {
+.task-item-complete .task-item-complete__text {
     color: gray;
     text-decoration: line-through;
 } 

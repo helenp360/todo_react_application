@@ -4,7 +4,7 @@ import './TaskItemHeadingImportant.css';
 function TaskItemHeadingImportant(props) {
   return (
     <div className="task-list-heading-urgent">
-        <h4>You have <strong>{ props.text } important</strong><br></br>things to do!</h4>
+        <h2>You have <strong>{ props.text } important</strong><br></br>things to do!</h2>
     </div>
   );
 }

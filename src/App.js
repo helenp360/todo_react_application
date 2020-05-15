@@ -8,17 +8,6 @@ import TaskItemHeadingUrgent from "./TaskItemHeadingUrgent/TaskItemHeadingUrgent
 import TaskItemHeadingImportant from "./TaskItemHeadingImportant/TaskItemHeadingImportant"
 import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeadingNonurgent"
 
-//Things to do!
-//DONE get it to put tasks in different columns depending on different levels of urgency
-//DONE show completed tasks but hide deleted tasks
-//DONE do CSS for completed tasks - cross out and turn grey AND lose the done button
-//Line up buttons?
-//DONE Spacing between task items - need a table/border?
-//If active tasks length = 0 and completed tasks is >=1 then well done message -- ternery operator?
-//If only 1 item in list it needs to say "thing to do"
-//CSS layout and colours
-//tidy up and get rid of code (and files) I don't need
-
 
 function App() {
 
@@ -32,7 +21,7 @@ function App() {
     {text: "Mow the lawn", completed: false, deleted: false, urgency: "3", id: "005"},
     {text: "Email work", completed: true, deleted: false, urgency: "1", id: "005"},
     {text: "Return parcel", completed: false, deleted: false, urgency: "3", id: "005"},
-    {text: "Finish homework", completed: false, deleted: false, urgency: "1", id: "005"},
+    {text: "Finish react homework", completed: false, deleted: false, urgency: "1", id: "005"},
 
   ]);
 
@@ -64,31 +53,33 @@ function App() {
       <div className="container">
         <div className="row">
 
-          <div className="list-group col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 task-list">
             <TaskItemHeadingUrgent text={ urgentTasksActive.length }/>
           
             {/* {urgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)} */}
             {urgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
             {urgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
+            <br></br>
 
 
           </div>  
 
-          <div className="list-group col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 task-list">
             <TaskItemHeadingImportant text={ importantTasksActive.length }/>
 
             {importantTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
             {importantTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
+            <br></br>
 
             
           </div>
 
-          <div className="list-group col-12 col-sm-4 task-list">
+          <div className="list-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 task-list">
             <TaskItemHeadingNonurgent text={ nonurgentTasksActive.length }/>
           
             {nonurgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
             {nonurgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
-
+            <br></br>
 
           
           </div>     

@@ -6,7 +6,7 @@ function TaskItem(props) {
     
     <div className={ `task-item ${ props.completed ? "task-item-complete" : "task-item-active"}`}>
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-7">
             <span className="list-group-item task-item__text">{ props.text }</span>
           </div>
@@ -24,13 +24,3 @@ function TaskItem(props) {
 }
 
 export default TaskItem;
-
-          // <ul className="list-group">
-          //   <li className="list-group-item d-flex justify-content-between align-items-center">Thing 1<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-          //     <button type="button" class="btn btn-secondary">Done</button>
-          //     <button type="button" class="btn btn-secondary">Edit</button>
-          //     <button type="button" class="btn btn-secondary">Delete</button>
-          //   </div></li>
-          // </ul>
-
-

@@ -4,18 +4,10 @@ import './TaskItemHeadingUrgent.css';
 function TaskItemHeadingUrgent(props) {
   return (
     <div className="task-list-heading-urgent">
-        <h4>You have <strong>{ props.text } URGENT</strong><br></br>things to do!</h4>
+        <h2>You have <strong>{ props.text } URGENT</strong><br></br>things to do!</h2>
     </div>
   );
 }
 
 export default TaskItemHeadingUrgent;
 
-
-
-
-// {if (urgentTasksActive.length === 0 && urgentTasksCompleted.length >=1){
-//   <p>Congrats!</p>
-// } else {
-//   <p>You have <strong>{ props.text } URGENT </strong>things to do!</p>
-// }

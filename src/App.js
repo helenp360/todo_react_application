@@ -1,4 +1,6 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import './App.css';
 import TaskItem from "./TaskItem/TaskItem"
 import TaskItemComplete from "./TaskItemComplete/TaskItemComplete"
@@ -11,18 +13,17 @@ import TaskItemHeadingNonurgent from "./TaskItemHeadingNonurgent/TaskItemHeading
 
 function App() {
 
-  const [ tasks ] = useState([
-    {text: "Walk the dog", completed: true, deleted: false, urgency: "1", id: "001"},
-    {text: "Mop the kitchen", completed: false, deleted: false, urgency: "2", id: "002"},
-    {text: "Empty the dishwasher", completed: true, deleted: false, urgency: "2", id: "003"},
-    {text: "Ring Mum", completed: false, deleted: false, urgency: "2", id: "004"},
-    {text: "Wash the car", completed: false, deleted: false, urgency: "3", id: "005"},
-    {text: "Ironing", completed: true, deleted: false, urgency: "3", id: "005"},
-    {text: "Mow the lawn", completed: false, deleted: false, urgency: "3", id: "005"},
-    {text: "Email work", completed: true, deleted: false, urgency: "1", id: "005"},
-    {text: "Return parcel", completed: false, deleted: false, urgency: "3", id: "005"},
-    {text: "Finish react homework", completed: false, deleted: false, urgency: "1", id: "005"},
-
+  const [ tasks, setTasks ] = useState([
+    {text: "Walk the dog", completed: true, deleted: false, urgency: "1", id: uuidv4()},
+    {text: "Mop the kitchen", completed: false, deleted: false, urgency: "2", id: uuidv4()},
+    {text: "Empty the dishwasher", completed: true, deleted: false, urgency: "2", id: uuidv4()},
+    {text: "Ring Mum", completed: false, deleted: false, urgency: "2", id: uuidv4()},
+    {text: "Wash the car", completed: false, deleted: false, urgency: "3", id: uuidv4()},
+    {text: "Ironing", completed: true, deleted: false, urgency: "3", id: uuidv4()},
+    {text: "Mow the lawn", completed: false, deleted: false, urgency: "3", id: uuidv4()},
+    {text: "Email work", completed: true, deleted: false, urgency: "1", id: uuidv4()},
+    {text: "Return parcel", completed: false, deleted: false, urgency: "3", id: uuidv4()},
+    {text: "Finish react homework", completed: false, deleted: false, urgency: "1", id: uuidv4()},
   ]);
 
   // const activeTasks = tasks.filter(task => !task.completed);
@@ -39,7 +40,25 @@ function App() {
   const nonurgentTasksActive = tasks.filter(task => task.deleted===false && task.urgency==="3" && task.completed===false);
   const nonurgentTasksCompleted = tasks.filter(task => task.deleted===false && task.urgency==="3" && task.completed===true);
 
+  function deleteTask(id) {
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
+  }
 
+  function completeTask(id) {
+    const updatedTasks = tasks.map(task => {
+      if(task.id ===id) {
+        task.completed = true;
+      }
+      return task;
+    })
+
+    setTasks(updatedTasks);
+  }
+
+  function addTask() {
+
+  }
 
   return (
     <div className="App">
@@ -57,8 +76,28 @@ function App() {
             <TaskItemHeadingUrgent text={ urgentTasksActive.length }/>
           
             {/* {urgentTasks.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)} */}
-            {urgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            {urgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
+            {urgentTasksActive.map(task => {
+              return <TaskItem
+                completeTask={ completeTask }
+                deleteTask={ deleteTask }
+                id={ task.id }
+                key={ task.id }
+                text={ task.text }
+                completed={ task.completed }
+                urgency={ task.urgency } />
+            })}
+            
+            
+            {urgentTasksCompleted.map(task => {
+              return <TaskItemComplete
+              deleteTask={ deleteTask }
+              id={ task.id }
+              key={ task.id }
+              text={ task.text }
+              completed={task.completed}
+              urgency={ task.urgency } />
+            })}
+            
             <br></br>
 
 
@@ -67,8 +106,27 @@ function App() {
           <div className="list-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 task-list">
             <TaskItemHeadingImportant text={ importantTasksActive.length }/>
 
-            {importantTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            {importantTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
+            {importantTasksActive.map(task => {
+              return <TaskItem
+              completeTask={ completeTask }
+              deleteTask={ deleteTask }
+              id={ task.id }
+              key={ task.id }
+              text={ task.text }
+              completed={task.completed}
+              urgency={ task.urgency } />
+            })}
+            
+            {importantTasksCompleted.map(task => {
+              return <TaskItemComplete
+              deleteTask={ deleteTask }
+              id={ task.id }
+              key={ task.id }
+              text={ task.text }
+              completed={task.completed}
+              urgency={ task.urgency } />
+            })}
+            
             <br></br>
 
             
@@ -77,8 +135,28 @@ function App() {
           <div className="list-group col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 task-list">
             <TaskItemHeadingNonurgent text={ nonurgentTasksActive.length }/>
           
-            {nonurgentTasksActive.map(task => <TaskItem key={ task.id } text={ task.text } completed={task.completed} />)}
-            {nonurgentTasksCompleted.map(task => <TaskItemComplete key={ task.id } text={ task.text } completed={task.completed} />)}
+            {nonurgentTasksActive.map(task => {
+              return <TaskItem
+              completeTask={ completeTask }
+              deleteTask={ deleteTask }
+              id={ task.id }
+              key={ task.id }
+              text={ task.text }
+              completed={task.completed}
+              urgency={ task.urgency } />
+            })}
+            
+            {nonurgentTasksCompleted.map(task => {
+              return <TaskItemComplete
+              deleteTask={ deleteTask }
+              id={ task.id }
+              key={ task.id }
+              text={ task.text }
+              completed={task.completed}
+              urgency={ task.urgency } />
+            })}
+
+          
             <br></br>
 
           

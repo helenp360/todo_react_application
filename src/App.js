@@ -56,8 +56,18 @@ function App() {
     setTasks(updatedTasks);
   }
 
-  function addTask() {
+  function addTask(text, urgency) {
+    const newTask = {
+      text: text,
+      completed: false,
+      deleted: false,
+      urgency: urgency,
+      id: uuidv4()
+    }
 
+    const updatedTasks = [ ...tasks, newTask ]
+
+    setTasks(updatedTasks);
   }
 
   return (
@@ -66,7 +76,7 @@ function App() {
         <h1>To Do List</h1>
       </header>
 
-      <TaskInput/>
+      <TaskInput addTask={ addTask }/>
       <br></br>
 
       <div className="container">

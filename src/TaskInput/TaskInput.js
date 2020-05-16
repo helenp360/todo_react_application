@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TaskInput.css';
 
-function TaskInput() {
+function TaskInput(props) {
   const [text, setText] = useState("");
   const [urgency, setUrgency] = useState(""); //number?
 
@@ -13,6 +13,10 @@ function TaskInput() {
   function handleUrgencyChange(event) { //up to 25:48 in video
     console.log(event.target.value);
     setUrgency(event.target.value);
+  }
+
+  function handleAddTaskClick(event) {
+    props.addTask(text, urgency);
   }
   
   return (
@@ -42,7 +46,7 @@ function TaskInput() {
             </select>
           </div>
           <div className="input-group-append">
-            <button className="btn btn-secondary" type="button" id="button-addon2">Add</button>
+            <button className="btn btn-secondary" type="button" id="button-addon2" onClick={ handleAddTaskClick }>Add</button>
           </div>
         </div>
       </div>

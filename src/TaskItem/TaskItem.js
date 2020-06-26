@@ -28,7 +28,7 @@ function TaskItem(props) {
             <span className="list-group-item task-item__text">{ props.text }</span>
           </div>
           <div className="col-5 task-item__buttons btn-group btn-group-sm" role="group" aria-label="Basic example">
-            { props.completed === false && <button type="button" className="btn btn-secondary task__complete-button" onClick={ handleCompleteClick }>Done</button> }
+            { props.completed === 0 && <button type="button" className="btn btn-secondary task__complete-button" onClick={ handleCompleteClick }>Done</button> }
             <button type="button" className="btn btn-secondary task__edit-button" onClick={ handleEditClick }>Edit</button>
             <button type="button" className="btn btn-secondary task__delete-button" onClick={ handleDeleteClick }>Delete</button>
           </div>
